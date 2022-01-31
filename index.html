@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="/browser-matrix.min.js"></script>
+  </head>
+  <body>
+    <script>
+      var client = matrixcs.createClient("https://matrix.org");
+      client.initCrypto();
+      client.publicRooms(function (err, data) {
+        if (err) {
+          console.error("err %s", JSON.stringify(err));
+          return;
+        }
+        console.log("data %s [...]", JSON.stringify(data).substring(0, 100));
+        console.log("Congratulations! The SDK is working on the browser!");
+        var result = document.getElementById("result");
+        result.innerHTML = "<p>The SDK appears to be working correctly.</p>";
+      });
+    </script>
+  </body>
+</html>
