@@ -5,13 +5,12 @@ esbuild.build({
   entryPoints: ["index.js"],
   bundle: true,
   outdir: "out/",
-  platform: "browser",
   plugins: [
-    // alias({
-    //   crypto: require.resolve("crypto-browserify"),
-    //   path: require.resolve("path-browserify"),
-    //   fs: require.resolve("browserify-fs"),
-    //   stream: require.resolve("stream-browserify"),
-    // }),
+    alias({
+      crypto: require.resolve("crypto-browserify"),
+      path: require.resolve("path-browserify"),
+      fs: require.resolve("browserify-fs"),
+      stream: require.resolve("stream-browserify"),
+    }),
   ],
 });
