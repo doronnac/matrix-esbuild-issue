@@ -6,4 +6,6 @@ To start the project:
 `npm run build`
 `npm start`
 
+A server will start in port 8000
+
 esbuild configuration is located in `esbuild.js`
